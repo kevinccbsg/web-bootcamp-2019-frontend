@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Classes prototypes</title>
+</head>
+<body>
+  <h2>Problems with prototypes?</h2>
+  <p>
+    If we declare without an order it will break our code. With arrow function context will not be presented
+  </p>
+  <h2>Differences with classes?</h2>
+  <p></p>
+  <h2>What happens when we don't use new?</h2>
+  <p>It will break your code</p>
+  <div>
+    <h3>Example</h3>
+  </div>
+  <script>
+    function Persona(name, age) {
+      this.name = name;
+      this.age = 12;
+    }
+    // If you move this to the bottom it will break your code
+    Persona.prototype.ageAndName = function () {
+      console.log(`My name is ${this.name} and my age is ${this.age}`);
+    };
+
+    // without new it will break your code
+    var kevin = new Persona('kevin', 26);
+    var victor = new Persona('victor', 36);
+
+    kevin.ageAndName();
+
+    class Animal {
+      constructor(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+
+      whoIam() {
+        console.log(`This is an Animal: ${this.name}`);
+      }
+    }
+
+    class Dog extends Animal {
+      constructor(name, age) {
+        super(name, age);
+        this.name = name;
+        this.age = age;
+      }
+      sound() {
+        console.log(`this Dog, ${this.name} says guau!!`);
+      }
+    }
+
+    const myDog = new Dog('Kasper', 4);
+    myDog.sound();
+    myDog.whoIam();
+    console.log(Dog.prototype);
+  </script>
+</body>
+</html>
