@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Arrow functions</title>
+</head>
+<body>
+  <h2>How can we write arrow functions?</h2>
+  <p>
+    var foo = () => 0;
+  </p>
+  <h2>Differences with old functions?</h2>
+  <p></p>
+  <div>
+    <h3>Example</h3>
+  </div>
+  <script>
+    const person = {
+      age : 28,
+    };
+    // var EXAMPLE
+    const canIbuyAlcohol = person => person.age >= 18;
+
+    console.log(canIbuyAlcohol(person));
+
+    /* ARROW FUNCTION SUMMARY
+      Do not have this.
+      Can’t be called with new.
+    */
+
+    // function sayHi() {
+    //   alert(`Hi ${this.text}!!`);
+    // }
+
+    const citizen = {
+      name: 'kevin',
+    };
+
+    const sayHi = () => {
+      this.name = 123;
+      // alert(`Hi ${this.name}!!`);
+      return () => {
+        console.log(this);
+        this.name = 'nombre';
+        console.log('name', this.name);
+      };
+    }
+    sayHi.call(citizen)();
+    // const saludar = new sayHi();
+    // console.log(saludar());
+  </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Variables</title>
+</head>
+<body>
+  <h2>What is the difference between var, let y const?</h2>
+  <p>
+    var can be accesed in any part of the code while let only in the closest scope. const is similar to let but it cannot be changed 
+  </p>
+  <h2>What is hoisting?</h2>
+  <p>mechanism where variables and function declarations are moved to the top of their scope before code execution. Inevitably, this means that no matter where functions and variables are declared, they are moved to the top of their scope regardless of whether their scope is global or local.</p>
+  <h2>Why this difference is usefull?</h2>
+  <p>We will avoid bugs in our code because we could have side effects</p>
+  <div>
+    <h3>Example</h3>
+  </div>
+  <script>
+    var person = {
+      age : 28,
+    };
+    // var EXAMPLE
+    function canIbuyAlcohol(person) {
+      if (person.age >= 18) {
+        var message = 'yes you can';
+      } else {
+        var message = 'no you can\'t';
+        var message2 = 'Undefined Variable'
+      }
+      console.log(message);
+      console.log(message2);
+      // console.log(message3);
+    }
+    canIbuyAlcohol(person);
+
+    // let example
+    function canIbuyAlcoholLet(person) {
+      if (person.age >= 18) {
+        let message = 'yes you can';
+      } else {
+        let message = 'no you can\'t';
+        var message2 = 'Undefined Variable'
+      }
+      // If we want to make it work we need to move let to the top
+      console.log(message);
+      console.log(message2);
+      // console.log(message3);
+    }
+    canIbuyAlcoholLet(person);
+  </script>
+</body>
+</html>
