@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Function context</title>
+</head>
+<body>
+  <h2>How can I change function context?</h2>
+  <p>You can use bind, call, apply</p>
+  <h2>Why do we wanna do this?</h2>
+  <p>We can create a generic function where anyone can decide the context of this one so that we will able to create a more reusable. This is not gonna change forever the context</p>
+  <h2>Differences betwwen bind, apply, call?</h2>
+  <p>Using .bind we send the new context to the function but with no execution</p>
+  <p>Using .call we execute the function with the selected context in the second parameter</p>
+  <p>Using .apply it is the same as .call but extra parameters are an array</p>
+
+  <div>
+    <h3>Example</h3>
+    <div>
+      <label for="name">Complete to say Hi!</label>
+      <input type="text" id="name">
+      <button id="hiButton">Say Hi!</button>
+    </div>
+  </div>
+  <script>
+    const dog = {
+      name: 'Kasper',
+      age: 5,
+      sound: () => 'Guau!!',
+    };
+    const cat = {
+      name: 'Garfield',
+      age: 12,
+      sound: () => 'Miauu!!',
+    };
+    // Remarcar problema con el arrow function!!
+    const description = function (...args) {
+      console.log(args);
+      console.log(this);
+      const name = this.name;
+      const age = this.age;
+      console.log(`This is ${name} is ${age} years old and make this sound ${this.sound()}`);
+    };
+    // description.bind(dog)();
+    // description.apply(dog, [1, 2]);
+    // description.call(dog, 1, 2);
+
+    /* EXAMPLE */
+    let tempContext = {};
+    const name = document.querySelector('#name');
+    name.addEventListener('change', evt => {
+      tempContext.text = evt.target.value;
+    });
+
+    const hiButton = document.querySelector('#hiButton');
+    function sayHi() {
+      alert(`Hi ${this.text}!!`);
+    }
+    hiButton.addEventListener('click', sayHi.bind(tempContext));
+  </script>
+</body>
+</html>
