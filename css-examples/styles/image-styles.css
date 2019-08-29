@@ -1,9 +1,13 @@
 
+:root {
+  --main-bg-color: #6abf69;
+}
 
 .full-screen {
   width: 100vw;
   height: 100vh;
   background-color: #6abf69;
+  background-color: var(--main-bg-color, red);
   margin: 0;
 }
 
