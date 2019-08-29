@@ -1,0 +1,34 @@
+
+.logo {
+  width: 100%;
+  height: 100%;
+  /*background-image: url(fallback.png);*/
+}
+/*
+.t-letter {
+  animation: spin;
+  animation-duration: 1s;
+}
+
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+ 
+@keyframes fadeIn {
+    0% {
+        opacity: .35;
+    }
+ 
+    50% {
+        opacity: .5;
+    }
+ 
+    75% {
+        opacity: .75;
+    }
+ 
+    100% {
+        opacity: .25;
+    }
+}*/
