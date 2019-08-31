@@ -64,5 +64,4 @@ export const renderDOMShows = async (query) => {
   }
 };
 
-renderDOMShows();
 

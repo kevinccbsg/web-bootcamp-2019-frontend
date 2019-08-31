@@ -28,6 +28,14 @@ const openHeader = (id) => (evt) => {
   elemento.classList.toggle('close');
 };
 
+const hideElement = selector => {
+  const element = document.querySelector(selector);
+  element.style.display = 'none';
+}
+
+const hideFilter = () => hideElement('.filter-container');
+
 export {
   openHeader,
+  hideFilter,
 };

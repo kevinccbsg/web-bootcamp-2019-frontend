@@ -5,6 +5,7 @@
 @import "icon.css";
 @import "mainSection.css";
 @import "navbar.css";
+@import "detail.css";
 
 * {
   font-family: 'Roboto', Verdana;
