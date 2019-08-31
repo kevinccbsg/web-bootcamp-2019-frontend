@@ -1,0 +1,16 @@
+@import "reset.css";
+@import "button.css";
+@import "input.css";
+@import "card.css";
+@import "icon.css";
+@import "mainSection.css";
+@import "navbar.css";
+
+* {
+  font-family: 'Roboto', Verdana;
+}
+
+a {
+  text-decoration: none;
+}
+
