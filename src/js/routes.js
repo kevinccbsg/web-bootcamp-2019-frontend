@@ -1,24 +1,26 @@
 import { renderDOMShows } from './shows.js';
 import { renderDetail } from './detail.js';
-import { handleFilter, handleForm } from './ui.js';
+import { handleFilter, handleForm, renderLoader } from './ui.js';
 import addQuoteListeners from './quotesForm.js';
 
-let store = {
-  shows: [],
-};
-
-page('/', () => {
+page('/', async (_, next) => {
   console.log('Load index');
+  renderLoader('hide', 'show');
   handleFilter('block');
   handleForm('none');
-  renderDOMShows();
+  await renderDOMShows();
+  next();
+}, () => {
+  renderLoader('show', 'hide');
 })
-page('/detail/:id', (ctx, next) => {
+page('/detail/:id', async (ctx, next) => {
+  renderLoader('hide', 'show');
   handleFilter('none');
   handleForm('block');
-  renderDetail(ctx.params.id);
+  await renderDetail(ctx.params.id);
   next();
 }, ctx => {
+  renderLoader('show', 'hide');
   addQuoteListeners(ctx.params.id);
 });
 

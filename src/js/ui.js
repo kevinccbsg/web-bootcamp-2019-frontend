@@ -37,8 +37,13 @@ const handleFilter = displayElement('.filter-container');
 
 const handleForm = displayElement('#detailSection');
 
+const loader = document.getElementById('lodaer');
+
+const renderLoader = toggle(loader);
+
 export {
   openHeader,
   handleFilter,
   handleForm,
+  renderLoader,
 };
