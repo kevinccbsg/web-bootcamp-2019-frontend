@@ -1,7 +1,6 @@
 import api from './api.js';
 
-const QUOTES_API = 
-  'https://quotes-api-ecoitpillp.now.sh/api/v1/quote/';
+const QUOTES_API = 'https://quotes-api-keepcoding.herokuapp.com/api/v1';
 
 const { createQuote } = api(QUOTES_API);
 
@@ -23,7 +22,7 @@ const addQuoteListeners = id => {
   quoteForm.addEventListener('submit', async (evt) => {
     evt.preventDefault();
     try {
-      // const quote = await createQuote(id, quoteInput.value);
+      const quote = await createQuote(id, quoteInput.value);
 
       // const beer = await getBeer(id);
       document.getElementById('quoteList').innerHTML = quoteTemplate(quoteInput.value);

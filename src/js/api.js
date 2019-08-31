@@ -7,7 +7,7 @@ const api = (API_URL = 'http://api.tvmaze.com/') => {
   return {
     createQuote: async (id, text) => {
       try {
-        const response = await fetch(`${API_URL}/${id}`, {
+        const response = await fetch(`${API_URL}/quote/${id}`, {
           method: 'POST',
           body: JSON.stringify({
             quote: text,
