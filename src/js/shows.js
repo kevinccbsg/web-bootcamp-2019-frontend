@@ -46,7 +46,11 @@ const renderShows = (element, shows) => {
     }
     return templateShow({ ...show, principal: false });
   }).join('');
-  element.innerHTML = htmlShows;
+  element.innerHTML = `
+    <div class="show-section">
+      ${htmlShows}
+    </div>
+  `;
   const headers = document.querySelectorAll('.card.secondary .card-header');
   headers.forEach((header) => {
     const id = header.parentNode.getAttribute('id');
@@ -57,7 +61,7 @@ const renderShows = (element, shows) => {
 export const renderDOMShows = async (query) => {
   try {
     const fetchShows = await getShows(query);
-    const showSection = document.getElementById('show-section');
+    const showSection = document.querySelector('main');
     renderShows(showSection, fetchShows);
   } catch (e) {
     console.error(e);

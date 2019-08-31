@@ -21,21 +21,21 @@ searchIcon.addEventListener('click', () =>
 closeIcon.addEventListener('click', () => 
   navbarVariable('search', 'no-search'));
 
-const openHeader = (id) => (evt) => {
+const openHeader = id => evt => {
   console.log(evt);
   evt.preventDefault();
   const elemento = document.getElementById(id);
   elemento.classList.toggle('close');
 };
 
-const hideElement = selector => {
+const hideElement = selector => display => {
   const element = document.querySelector(selector);
-  element.style.display = 'none';
+  element.style.display = display;
 }
 
-const hideFilter = () => hideElement('.filter-container');
+const handleFilter = hideElement('.filter-container');
 
 export {
   openHeader,
-  hideFilter,
+  handleFilter,
 };

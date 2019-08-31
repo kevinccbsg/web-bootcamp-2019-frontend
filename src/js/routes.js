@@ -1,6 +1,6 @@
 import { renderDOMShows } from './shows.js';
 import { renderDetail } from './detail.js';
-import { hideFilter } from './ui.js';
+import { handleFilter } from './ui.js';
 
 let store = {
   shows: [],
@@ -8,11 +8,12 @@ let store = {
 
 page('/', () => {
   console.log('Load index');
+  handleFilter('block');
   renderDOMShows();
 })
 page('/detail/:id', (ctx, next) => {
   const { params } = ctx;
-  hideFilter();
+  handleFilter('none');
   renderDetail(ctx.params.id);
 });
 
