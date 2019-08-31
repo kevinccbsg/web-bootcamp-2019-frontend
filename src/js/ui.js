@@ -23,6 +23,7 @@ closeIcon.addEventListener('click', () =>
 
 const openHeader = (id) => (evt) => {
   console.log(evt);
+  evt.preventDefault();
   const elemento = document.getElementById(id);
   elemento.classList.toggle('close');
 };

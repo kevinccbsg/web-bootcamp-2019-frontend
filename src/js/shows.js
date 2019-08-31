@@ -8,27 +8,31 @@ const { getShows } = api();
 const templateShow = ({ id, name, image, summary, principal }) => `
   <div id="${id}" class="card ${principal ? 'principal' : 'secondary close'}">
     <header class="card-header">
-      <h2>${name}</h2>
+      <a href="/detail/${id}">
+        <h2>${name}</h2>
+      </a>
     </header>
-    <div class="card-content">
-      <div class="card-content-image">
-        <img src="${image ? image.medium : 'defaultImg'}">
-      </div>
-      <div class="card-content-text">
-        <p>${summary}</p>
-        <div class="rating-container">
-          <button class="icon">
-            <i class="fas fa-star"></i>
-          </button>
-          <button class="icon">
-            <i class="far fa-star"></i>
-          </button>
-          <button class="icon">
-            <i class="far fa-star"></i>
-          </button>
+      <a href="/detail/${id}">
+        <div class="card-content">
+          <div class="card-content-image">
+            <img src="${image ? image.medium : 'defaultImg'}">
+          </div>
+          <div class="card-content-text">
+            <p>${summary}</p>
+            <div class="rating-container">
+              <button class="icon">
+                <i class="fas fa-star"></i>
+              </button>
+              <button class="icon">
+                <i class="far fa-star"></i>
+              </button>
+              <button class="icon">
+                <i class="far fa-star"></i>
+              </button>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      </a>
   </div>
 `;
 
