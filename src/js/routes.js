@@ -1,6 +1,6 @@
 import { renderDOMShows } from './shows.js';
 import { renderDetail } from './detail.js';
-import { handleFilter } from './ui.js';
+import { handleFilter, handleForm } from './ui.js';
 
 let store = {
   shows: [],
@@ -9,11 +9,13 @@ let store = {
 page('/', () => {
   console.log('Load index');
   handleFilter('block');
+  handleForm('none');
   renderDOMShows();
 })
 page('/detail/:id', (ctx, next) => {
   const { params } = ctx;
   handleFilter('none');
+  handleForm('block');
   renderDetail(ctx.params.id);
 });
 

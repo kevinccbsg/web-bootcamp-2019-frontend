@@ -11,10 +11,6 @@ main {
     ". main .";
 }
 
-#detailSection {
-  display: 'none'
-}
-
 .show-section {
   grid-area: main;
 }

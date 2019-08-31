@@ -28,14 +28,17 @@ const openHeader = id => evt => {
   elemento.classList.toggle('close');
 };
 
-const hideElement = selector => display => {
+const displayElement = selector => display => {
   const element = document.querySelector(selector);
   element.style.display = display;
-}
+};
 
-const handleFilter = hideElement('.filter-container');
+const handleFilter = displayElement('.filter-container');
+
+const handleForm = displayElement('#detailSection');
 
 export {
   openHeader,
   handleFilter,
+  handleForm,
 };

@@ -19,17 +19,6 @@ main {
   margin: 10px;
 }
 
-.detail-section .loader, .detail-section .left-loader {
-  display: none;
-}
-.detail-section.loading .loader, .detail-section.loading .left-loader {
-  display: flex;
-}
-.detail-section.loading .detail-content,
-.detail-section.loading .quote-form,
-.detail-section.loading .quotes-list {
-  display: none;
-}
 .detail-section header {
   position: relative;
   margin: 0 auto;
