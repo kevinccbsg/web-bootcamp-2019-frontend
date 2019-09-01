@@ -1,7 +1,7 @@
 
 const API_KEY = 'API key';
 
-const api = (API_URL = 'http://api.tvmaze.com/') => {
+const api = (API_URL = 'https://api.tvmaze.com/') => {
   const SEARCH_API_URL = `${API_URL}search/shows?q=`;
   const SHOWS_URL = `${API_URL}shows`;
   return {
