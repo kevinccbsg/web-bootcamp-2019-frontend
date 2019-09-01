@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Common use</title>
+  </head>
+  <body>
+    <h1>Open console</h1>
+    <script>
+      const data = [1, 2, 4, 5];
+
+      // Mutability
+      // estructuras que no se pueden mutar son los numeros, string o booleanos
+      // var data = true;
+      // var data2 = data
+      // data2 = false
+      // data -> still values true
+      // filter numbers different to 2
+      // old function system
+      // const result = data.filter(function (items, index) {
+      //   return items !== 2;
+      // });
+      // Tipical mutability examples!!!
+
+      const result = data.filter(items => items !== 2);
+      console.log('Filter result', result);
+      // MAP
+      const resultMap = data.map(items => items * 2);
+      console.log('Map result', resultMap);
+      // Reduce
+      const object = data.reduce((acum, current) => (
+       { ...acum, [`index-${current}`]: current }
+      ), {});
+      console.log('Reduce example', object);
+
+
+    </script>
+  </body>
+</html>
+
