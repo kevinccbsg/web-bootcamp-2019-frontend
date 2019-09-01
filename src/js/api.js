@@ -28,6 +28,25 @@ const api = (API_URL = 'http://api.tvmaze.com/') => {
         throw e;
       }
     },
+    getQuotes: async id => {
+      try {
+        const response = await fetch(`${API_URL}/quote/${id}`, {
+          method: 'GET',
+          headers: {
+            'Content-type': 'application/json',
+            'X-API-KEY': API_KEY,
+          },
+        });
+        if (!response.ok) {
+          throw 'Error';
+        }
+        const quotes = await response.json();
+        return quotes;
+      } catch (e) {
+        console.error(e);
+        throw e;
+      }
+    },
     getShows: async (query) => {
       try {
         const requestUrl = query ?

@@ -24,7 +24,7 @@ const addQuoteListeners = id => {
     try {
       const quote = await createQuote(id, quoteInput.value);
       // const beer = await getBeer(id);
-      document.getElementById('quoteList').innerHTML = quoteTemplate(quoteInput.value);
+      document.getElementById('quoteList').innerHTML += quoteTemplate(quoteInput.value);
     } catch (e) {
       console.error(e);
     }
