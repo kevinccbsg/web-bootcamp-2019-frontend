@@ -7,7 +7,10 @@ const searchInput =
 
 searchForm.addEventListener('submit', (evt) => {
   evt.preventDefault();
-  if (searchInput.value !== '') {
+  // console.log(searchForm.checkValidity());
+  // console.log(searchInput.validity);
+  // console.log(searchInput.dataset.patternMismatch);
+  if (searchInput.validity.valid) {
     // traer shows!!!
     renderDOMShows(searchInput.value);
   }

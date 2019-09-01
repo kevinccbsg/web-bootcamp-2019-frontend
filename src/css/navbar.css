@@ -35,6 +35,7 @@
 
 .app-navbar .filter-input {
   display: flex;
+  margin-right: 20px;
 }
 .app-navbar.no-search .filter-container,
 .app-navbar.no-search .fa-times {
@@ -46,7 +47,7 @@
 }
 
 .app-navbar.filter .navbar-right-actions {
-  display: block;
+  display: flex;
 }
 
 .app-navbar.no-filter .navbar-right-actions {
@@ -60,11 +61,18 @@
   .app-navbar.no-search .navbar-icon {
     display: none;
   }
+  .app-navbar.filter .navbar-right-actions {
+    display: block;
+  }
 }
 
 .app-navbar.search .filter-container,
 .app-navbar.search .fa-times {
   display: block;
+}
+
+.app-navbar.search.filter .navbar-right-actions {
+  width: 100%;
 }
 
 .app-navbar.search .navbar-logo,
