@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Classes prototypes</title>
+</head>
+<body>
+  <div id="container">
+    <button id="myButton">Click me</button>
+  </div>
+  <script>
+    const container = document.getElementById('container');
+    const myButton = document.getElementById('myButton');
+
+    container.addEventListener('click', () => {
+      alert('click container');
+    });
+    myButton.addEventListener('click', (evt) => {
+      console.log(evt);
+      evt.stopPropagation();
+      alert('click button');
+    });
+  </script>
+</body>
+</html>
