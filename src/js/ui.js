@@ -37,6 +37,10 @@ const handleFilter = toggle(navbar);
 
 const handleForm = displayElement('#detailSection');
 
+const main = document.querySelector('main');
+
+const handleMainContainer = toggle(main);
+
 const loader = document.getElementById('lodaer');
 
 const renderLoader = toggle(loader);
@@ -46,4 +50,5 @@ export {
   handleFilter,
   handleForm,
   renderLoader,
+  handleMainContainer,
 };
