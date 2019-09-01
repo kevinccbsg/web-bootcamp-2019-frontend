@@ -1,5 +1,5 @@
 
-# keepcoding bootcamp 2019
+# Desarrollo frontend con JavaScript
 
 This is a repo with the keepcoding bootcamp 2019 course material.
 
@@ -38,4 +38,3 @@ To run the app
 ```
 npm start
 ```
-
