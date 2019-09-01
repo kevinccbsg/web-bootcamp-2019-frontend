@@ -23,7 +23,6 @@ const addQuoteListeners = id => {
     evt.preventDefault();
     try {
       const quote = await createQuote(id, quoteInput.value);
-
       // const beer = await getBeer(id);
       document.getElementById('quoteList').innerHTML = quoteTemplate(quoteInput.value);
     } catch (e) {
