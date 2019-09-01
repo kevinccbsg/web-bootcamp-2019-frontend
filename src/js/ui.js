@@ -33,7 +33,7 @@ const displayElement = selector => display => {
   element.style.display = display;
 };
 
-const handleFilter = displayElement('.filter-container');
+const handleFilter = toggle(navbar);
 
 const handleForm = displayElement('#detailSection');
 

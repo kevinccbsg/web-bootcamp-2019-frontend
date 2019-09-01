@@ -6,7 +6,7 @@ import addQuoteListeners from './quotesForm.js';
 page('/', async (_, next) => {
   console.log('Load index');
   renderLoader('hide', 'show');
-  handleFilter('block');
+  handleFilter('no-filter', 'filter');
   handleForm('none');
   await renderDOMShows();
   next();
@@ -15,7 +15,7 @@ page('/', async (_, next) => {
 })
 page('/detail/:id', async (ctx, next) => {
   renderLoader('hide', 'show');
-  handleFilter('none');
+  handleFilter('filter', 'no-filter');
   handleForm('block');
   await renderDetail(ctx.params.id);
   next();

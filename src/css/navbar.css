@@ -1,5 +1,5 @@
 .app-navbar {
-  background-color: #388E3C;
+  background-color: var(--main-bg-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -30,13 +30,7 @@
   color: #FFFFFF;
 }
 .app-navbar .filter-container {
-  width: 85%;
-}
-
-@media (min-width: 768px) {
-  .app-navbar .filter-container {
-    width: 40%;
-  }
+  width: 100%;
 }
 
 .app-navbar .filter-input {
@@ -49,6 +43,14 @@
 .app-navbar.no-search .navbar-logo,
 .app-navbar.no-search .fa-search {
   display: block;
+}
+
+.app-navbar.filter .navbar-right-actions {
+  display: block;
+}
+
+.app-navbar.no-filter .navbar-right-actions {
+  display: none;
 }
 
 @media (min-width: 992px) {
