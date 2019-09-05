@@ -1,0 +1,64 @@
+.sprite {
+  background-image: url(spritesheet.png);
+  background-repeat: no-repeat;
+  display: block;
+}
+
+.sprite-logo {
+  width: 128px;
+  height: 128px;
+  background-position: 0 0;
+}
+
+.sprite-selenium_ {
+  width: 128px;
+  height: 128px;
+  background-position: -128px 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+}
+
+.image-container {
+  width: 100%;
+  height: 100%;
+}
+
+.image-container img, object {
+  width: 100%;
+  height: 100%;
+}
+
+#my-bar {
+  background-color: red;
+  animation-name: toggleOpacity;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes toggleOpacity {
+  0% { opacity: 0 }
+  50% { opacity: 1 }
+  100% { opacity: 0 }
+}
+
+.no-flexbox .flex-class {
+  float: left;
+}
+
+.flex-class {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+
+
+
+
+
+

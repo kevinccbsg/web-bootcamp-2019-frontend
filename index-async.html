@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Async</title>
+</head>
+<body>
+  <div id="container"></div>
+  <script>
+    (async () => {
+      const container = document.querySelector('#container');
+
+      const getResources = () => (
+        new Promise((resolve) => {
+          setTimeout(() => {
+            info = 'Super texto pero desde API';
+            resolve(info);
+          }, 3000);
+        });
+      );
+
+      // getResources(function (info) {
+      //   addP(`1. ${info}`);
+      //   getResources(function (info) {
+      //     addP(`2. ${info}`);
+      //     getResources(function (info) {
+      //       addP(`3. ${info}`);
+      //     });
+      //   })
+      // })
+
+      // getResources()
+      //   .then(info => {
+      //     addP(`1. ${info}`);
+      //     return getResources();
+      //   })
+      //   .then(info => {
+      //     addP(`2. ${info}`);
+      //     return getResources();
+      //   })
+      //   .then(info => {
+      //     addP(`3. ${info}`);
+      //   });
+
+      const addP = pValue => {
+        const para = document.createElement('p');
+        const textNode = document.createTextNode(pValue);
+        para.appendChild(textNode);
+
+        // container.appendChild(para);
+
+        const para2 = `<p id="texto">${pValue}</p>`;
+        container.innerHTML += para2;
+
+        // const texto = document.querySelector('#texto');
+        // texto.addEventListener('click', () => console.log('click!!!'));
+      };
+
+
+      const info1 = await getResources();
+      addP(`1. ${info1}`);
+      const info2 = await getResources();
+      addP(`2. ${info2}`);
+      const info3 = await getResources();
+      addP(`3. ${info3}`);
+
+    })();
+
+  </script>
+</body>
+</html>

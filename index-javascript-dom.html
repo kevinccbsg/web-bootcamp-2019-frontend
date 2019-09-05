@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1, shrink-to-fit=no">
+    <title>TVMaze shows</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <!-- styles -->
+    <style>
+      .hide p {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>TVMAZE</h1>
+    <div id="my-p" class="texto" data-cy="selector-cypress" data-error="mi error">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio officia iure vel facere laudantium iste officiis doloremque incidunt quisquam enim esse laborum et error veritatis quas, dicta, quaerat fugiat temporibus!<span>Link</span><button>Button</button></div>
+    <div id="my-p" class="texto" data-cy="selector-cypress" data-error="mi error">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio officia iure vel facere laudantium iste officiis doloremque incidunt quisquam enim esse laborum et error veritatis quas, dicta, quaerat fugiat temporibus!<span>Link</span><button>Button</button></div>
+    <div id="my-p" class="texto" data-cy="selector-cypress" data-error="mi error">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio officia iure vel facere laudantium iste officiis doloremque incidunt quisquam enim esse laborum et error veritatis quas, dicta, quaerat fugiat temporibus!<span>Link</span><button>Button</button></div>
+
+    <button id="my-button">Texto</button>
+
+    <input type="text" class="input-class" id="input" data-error="mi error">
+
+    <div id="container">
+      <button id="button">texto</button>
+    </div>
+
+    <div id="text-container" class="container white test">
+      <p id="lorem-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, iste dolore. Harum suscipit placeat culpa ut, voluptatum aut aspernatur blanditiis quidem officia vitae doloremque nostrum animi reiciendis iusto voluptatem eum.</p>
+      <button id="hideButton">Hide</button>
+    </div>
+
+    <script>
+
+      const loremText = document.querySelector('#lorem-text');
+      const hideButton = document.querySelector('#hideButton');
+
+      hideButton.addEventListener('click', (evt) => {
+        // loremText.style.backgroundColor = 'red';
+        // loremText.style.color = 'blue';
+        const container = document.querySelector('#text-container');
+        container.classList.toggle('hide');
+        if (evt.target.textContent.includes('show')) {
+          return evt.target.textContent = 'hide';
+        }
+        return evt.target.textContent = 'show';
+      });
+
+      // console.log('Hello world');
+      const myElement = document.getElementsByClassName('texto');
+      // console.log(myElement.dataset);
+      Object.keys(myElement).forEach(key => {
+        myElement[key].innerHTML = '<button>Send</button>';
+      });
+
+      const myButton = document.getElementById('my-button');
+      const myInput = document.querySelector('#input');
+
+      myInput.addEventListener('click', () => console.log('Execute'));
+
+      myInput.addEventListener('focus', evt => console.log('Focus'));
+
+      myInput.addEventListener('blur', () => console.log('Blur'));
+
+      myInput.addEventListener('keydown', evt => {
+        // evt.preventDefault();
+        console.log('start keydown');
+        console.log(evt.target.value);
+        console.log('end keydown');
+      });
+
+      myInput.addEventListener('keyup', evt => {
+        // evt.preventDefault();
+        console.log('start keyup');
+        console.log(evt.target.value);
+        console.log('end keyup');
+      });
+
+      myInput.addEventListener('copy', () => console.log('copy'));
+
+      const container = document.getElementById('container');
+      const button = document.getElementById('button');
+
+      container.addEventListener('click', () => alert('Click container'));
+
+      button.addEventListener('click', (evt) => {
+        evt.stopPropagation();
+        alert('click button');
+      });
+
+    </script>
+  </body>
+</html>
+
+
+
+
+

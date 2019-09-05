@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>FORMS</title>
+    <style>
+      .group-input {
+        display: flex;
+        flex-direction: column;
+      }
+      .error {
+        display: none;
+        color: red;
+      }
+
+      .form.invalid .error {
+        display: block;
+      }
+      .block {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <form class="form" id="form" novalidate>
+      <div class="group-input">
+        <label for="name">Name: </label>
+        <input id="name" required name="name" type="text" data-error="Error en el input" />
+        <span class="error"></span>
+        <span class="error"></span>
+        <span class="error"></span>
+        <span class="error"></span>
+        <span class="error"></span>
+        <span class="error"></span>
+      </div>
+      <div class="group-input">
+        <label for="age">age: </label>
+        <input id="age" required max="2" name="age" type="number" />
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+    <script>
+      const nameInput = document.querySelector('#name');
+      const form = document.querySelector('#form');
+      const age = document.querySelector('#age');
+      // nameInput.setCustomValidity('Error en español!!!');
+
+      const showError = message => {
+        const errors = document.querySelectorAll('form .error');
+        errors.forEach((error, index) => {
+          error.innerText = `${message} ${index}`;
+        })
+        form.classList.add('invalid');
+      };
+
+      nameInput.addEventListener('keyup', (evt) => {
+        console.log(evt);
+        form.classList.remove('invalid');
+      });
+
+      form.addEventListener('submit', async evento => {
+        console.log(evento);
+        // console.log(evt.target.checkValidity());
+        // console.log(evt.target);
+        evento.preventDefault();
+        console.log(age.validity);
+        if (!nameInput.validity.valid) {
+          return showError(nameInput.dataset.error);
+        }
+      });
+    </script>
+  </body>
+</html>

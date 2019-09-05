@@ -1,54 +1,35 @@
 
-const navbar = document.getElementById('navbar');
-const navbarLogo = document
-  .querySelector('.navbar-logo');
-const searchIcon = document
-  .getElementById('navbar-search');
-const closeIcon = document
-  .getElementById('navbar-close');
 
-const toggle = elemento =>
-  (removeClass, addClass) => {
-    elemento.classList.remove(removeClass);
-    elemento.classList.add(addClass);
-  };
+// const data = [1, 2, 3, 4];
 
-const navbarVariable = toggle(navbar);
+// const multiplicar = value =>
+//   item => item * value;
 
-searchIcon.addEventListener('click', () => 
-  navbarVariable('no-search', 'search'));
+// const multiplicarPor2 = multiplicar(2);
+// const multiplicarPor5 = multiplicar(5);
 
-closeIcon.addEventListener('click', () => 
-  navbarVariable('search', 'no-search'));
+// const result = data.map(multiplicarPor5);
 
-const openHeader = id => evt => {
-  console.log(evt);
-  evt.preventDefault();
-  const elemento = document.getElementById(id);
-  elemento.classList.toggle('close');
+// console.log(result);
+
+// const logo = document.querySelector('#navbar .navbar-logo');
+
+export const toggle = elemento => (removeClass, addClass) => {
+  elemento.classList.remove(removeClass);
+  elemento.classList.add(addClass);
 };
 
-const displayElement = selector => display => {
-  const element = document.querySelector(selector);
-  element.style.display = display;
+export const toggleClass = (elemento, toggleClass) => {
+  elemento.classList.toggle(toggleClass);
 };
 
-const handleFilter = toggle(navbar);
+// const NOMBRE = 'nombre';
 
-const handleForm = displayElement('#detailSection');
+// export default NOMBRE;
+// module.exports = { toggle };
 
-const main = document.querySelector('main');
+// const handleLogoClassName = toggle(logo);
 
-const handleMainContainer = toggle(main);
+//setTimeout(() => handleNavBar('no-search', 'search'), 1000);
 
-const loader = document.getElementById('lodaer');
-
-const renderLoader = toggle(loader);
-
-export {
-  openHeader,
-  handleFilter,
-  handleForm,
-  renderLoader,
-  handleMainContainer,
-};
+// handleLogoClassName('asd', 'test-class');
