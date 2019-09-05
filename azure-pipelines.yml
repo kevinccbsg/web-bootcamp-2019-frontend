@@ -13,6 +13,6 @@ steps:
     Dockerfile: '**/Dockerfile'
 
 - task: PublishBuildArtifacts@1
-    displayName: "Publish Artifact: drop"
-    inputs:
-      PathtoPublish: .helm
+  displayName: "Publish Artifact: drop"
+  inputs:
+    PathtoPublish: .helm
