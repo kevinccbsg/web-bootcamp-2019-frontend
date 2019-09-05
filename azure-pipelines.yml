@@ -7,3 +7,8 @@ steps:
     repository: 'Curso Guidesmiths'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
+
+- task: PublishBuildArtifacts@1
+    displayName: "Publish Artifact: drop"
+    inputs:
+      PathtoPublish: .helm
