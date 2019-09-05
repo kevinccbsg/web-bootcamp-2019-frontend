@@ -4,8 +4,6 @@ trigger:
 pool:
   name: Hosted Ubuntu 1604
 
-pool:
-  name: Azure Pipelines
 steps:
 - task: Docker@2
   inputs:
