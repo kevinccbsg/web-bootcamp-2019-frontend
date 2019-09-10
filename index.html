@@ -44,7 +44,7 @@
       <form id="quote-form" class="quote-form" novalidate>
         <div class="quote-input">
           <label for="quote">Quote of this show</label>
-          <input id="quote" placeholder="Add your quote" class="input primary" type="text">
+          <input required id="quote" placeholder="Add your quote" class="input primary" type="text">
         </div>
         <button type="submit" class="button primary">Add quote</button>
       </form>
@@ -55,6 +55,7 @@
       <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
     </div>
     <!-- Loader end -->
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
     <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
     <script type="module" src="/src/js/routes.js"></script>
   </body>

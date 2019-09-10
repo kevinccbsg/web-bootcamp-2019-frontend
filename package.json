@@ -4,13 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "./node_modules/.bin/http-server . -c-1"
+    "lint": "./node_modules/.bin/eslint src",
+    "server": "./node_modules/.bin/http-server . -c-1",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "http-server": "^0.11.1"
+    "eslint": "^6.3.0",
+    "http-server": "^0.11.1",
+    "husky": "^3.0.5"
   },
   "dependencies": {
     "express": "^4.17.1"

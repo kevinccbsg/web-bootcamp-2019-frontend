@@ -2,13 +2,18 @@
 // console.log('navbar');
 import { toggle } from './ui.js';
 import { renderShowsDOM } from './shows.js';
+import storage from './storage.js';
 // const { toggle: className } = require('./ui.js'); ()
+
+const { setItem, getItem } = storage('cookieStorage');
 
 const navbar = document.querySelector('#navbar');
 const searchIcon = document.querySelector('#navbar-search');
 const closeIcon = document.querySelector('#navbar-close');
 const searchForm = document.querySelector('#search-form');
 const searchInput = document.querySelector('#navbar .input.search');
+
+searchInput.value = getItem('navbar-input');
 
 const handleNavBar = toggle(navbar);
 
@@ -24,6 +29,7 @@ searchForm.addEventListener('submit', evt => {
   evt.preventDefault();
   if (searchInput.validity.valid) {
     // render shows
+    setItem('navbar-input', searchInput.value);
     renderShowsDOM(searchInput.value);
   }
 });
