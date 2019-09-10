@@ -33,9 +33,29 @@
     <main>
     </main>
     <!-- main-section end -->
-    <script type="module" src="/src/js/ui.js"></script>
-    <script type="module" src="/src/js/shows.js"></script>
-    <script type="module" src="/src/js/navbar.js"></script>
-    <script type="module" src="/src/js/api.js"></script>
+    <!-- comment-form -->
+    <section id="detailSection" class="detail-section">
+      <div id="detail" class="detail-content"></div>
+      <div class="quotes-list">
+        <h2>Quotes</h2>
+        <div id="quoteList">
+        </div>
+      </div>
+      <form id="quote-form" class="quote-form" novalidate>
+        <div class="quote-input">
+          <label for="quote">Quote of this show</label>
+          <input id="quote" placeholder="Add your quote" class="input primary" type="text">
+        </div>
+        <button type="submit" class="button primary">Add quote</button>
+      </form>
+    </section>
+    <!-- comment-form end -->
+    <!-- loader -->
+    <div id="loader" class="loader-container hide">
+      <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </div>
+    <!-- Loader end -->
+    <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
+    <script type="module" src="/src/js/routes.js"></script>
   </body>
 </html>

@@ -16,7 +16,6 @@ searchIcon.addEventListener('click', () => (
   handleNavBar('no-search', 'search')
 ));
 
-
 closeIcon.addEventListener('click', () => {
   toggle(navbar)('search', 'no-search');
 });
@@ -29,3 +28,10 @@ searchForm.addEventListener('submit', evt => {
   }
 });
 
+// const hideFilter = handleNavBar.bind(this, 'filter', 'no-filter');
+// const showFilter = handleNavBar.bind(this, 'no-filter', 'filter');
+
+const hideFilter = () => handleNavBar('filter', 'no-filter');
+const showFilter = () => handleNavBar('no-filter', 'filter');
+
+export { hideFilter, showFilter };

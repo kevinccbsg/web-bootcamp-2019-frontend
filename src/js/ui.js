@@ -14,6 +14,21 @@
 
 // const logo = document.querySelector('#navbar .navbar-logo');
 
+const loader = document.querySelector('#loader');
+const detailSection = document.querySelector('#detailSection');
+
+export const showQuotesForm = () => detailSection.style.display = 'block';
+export const hideQuotesForm = () => detailSection.style.display = 'none';
+
+// const displayElement = selector => display => {
+//   const elemento = document.querySelector(elemento);
+//   elemento.style.display = display;
+// };
+
+// const handleform = displayElement('#detailSection');
+
+// handleform('block')
+
 export const toggle = elemento => (removeClass, addClass) => {
   elemento.classList.remove(removeClass);
   elemento.classList.add(addClass);
@@ -22,6 +37,8 @@ export const toggle = elemento => (removeClass, addClass) => {
 export const toggleClass = (elemento, toggleClass) => {
   elemento.classList.toggle(toggleClass);
 };
+
+export const renderLoader = toggle(loader);
 
 // const NOMBRE = 'nombre';
 
