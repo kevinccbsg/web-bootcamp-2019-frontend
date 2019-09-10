@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { renderDOMShows } from './shows.js';
 import { renderDetail } from './detail.js';
 import { handleFilter, handleForm, renderLoader, handleMainContainer } from './ui.js';
