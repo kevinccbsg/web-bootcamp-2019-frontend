@@ -2,14 +2,8 @@ import './ui.js';
 import './navbar.js';
 
 if ('serviceWorker' in navigator) {
+  // Use the window load event to keep the page load performant
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js')
-      .then(registration => {
-        // Registration was successful
-        console.log('ServiceWorker registration successful with scope: ', registration.scope);
-      }, err => {
-        // registration failed :(
-        console.log('ServiceWorker registration failed: ', err);
-      });
+    navigator.serviceWorker.register('/sw.js');
   });
 }
