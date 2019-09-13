@@ -20,7 +20,7 @@ const addQuoteListener = id => {
     evt.preventDefault();
     try {
       if (quotesInput.validity.valid) {
-        // const id = window.location.pathname.split('/detail/')[1]
+        // const id = window.location.pathname.split('/detail/')[1];
         const response = await createQuote(id, quotesInput.value);
         quotesList.innerHTML += quoteTemplate(response);
         // 1. Caso :)
